@@ -1,0 +1,132 @@
+.profileimg {
+  max-width: 40px;
+  text-align: center;
+}
+.menu {
+  height: 100%;
+  border-right: 1px solid #824EBD;
+}
+.menuprofile {
+  margin-top: 60px;
+}
+.menuwelcome {
+  font-size: 1.1em;
+  color: #824EBD;
+}
+.nllink {
+  color: darkgray !important;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+.nllink:hover {
+  color: #824EBD !important;
+}
+.menulist {
+  list-style: none;
+  padding-left: 15px;
+}
+.menulist li {
+  padding-top: 10px;
+  font-size: 1em !important;
+  font-family: roboto;
+  font-weight: 500;
+  cursor: pointer;
+}
+.menulist a {
+  text-decoration: none;
+  color: darkgray;
+}
+.menulist a:hover {
+  color: #824EBD;
+}
+.menutop {
+  bottom: 171px;
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.linklist {
+  list-style: none;
+  padding-left: 10px;
+}
+.linklist li {
+  padding-top: 10px;
+  font-family: roboto;
+  font-weight: 500;
+  cursor: pointer;
+}
+.linklist a {
+  text-decoration: none;
+  font-size: 1em !important;
+  color: #824EBD;
+}
+.linklist a span {
+  margin-right: 10px;
+}
+.linklist a:hover {
+  color: #824EBD;
+}
+.officeList li {
+  margin-right: 5px;
+  cursor: pointer;
+}
+.officeList li a {
+  color: #824EBD !important;
+  border: 2px #824EBD solid;
+  border-radius: 10px;
+  padding: 7px 12px;
+}
+.officeList li.active a {
+  color: white !important;
+  background-color: #824EBD !important;
+}
+.activeItem {
+  color: #824EBD !important;
+}
+.header {
+  min-height: 120px;
+  padding-top: 70px;
+  padding-left: 15px;
+  background-color: #824EBD;
+}
+.header h1 {
+  font-family: roboto;
+  font-weight: 300;
+  color: white;
+}
+.header h1 small {
+  color: white;
+  opacity: 0.7;
+  font-family: roboto;
+  font-weight: 200;
+}
+.help-nopadding-left {
+  padding-left: 0;
+}
+p {
+  font-family: roboto;
+  text-align: justify;
+}
+.pintro {
+  color: darkgray;
+  font-style: italic;
+}
+h2 {
+  border-left: 2px solid #824EBD;
+  padding-left: 10px;
+  color: #824EBD;
+  font-size: 1.5em;
+  font-family: roboto;
+  font-weight: 500;
+}
+.contentList {
+  list-style: none;
+  border-left: 2px solid #824EBD;
+  padding-left: 10px;
+}
+.contentList a {
+  font-size: 1.1em;
+  color: #824EBD !important;
+  line-height: 1.7em;
+  cursor: pointer;
+}

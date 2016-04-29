@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,700,400italic,100italic,300,300italic&subset=latin,greek'type='text/css'>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+<link rel="stylesheet" href="style.css">
+
+<script src="https://code.jquery.com/jquery-2.2.1.min.js" integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.4/ui-bootstrap-tpls.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.4/ui-bootstrap.min.js"></script>
+<script src="scripts/intranet.js"></script>
+
+<title>Test</title>
+
+</head>
+<body ng-app="myApp" ng-controller="MainController">
+  <div class="col-md-2 menu">
+    <div class="menutop">
+
+    <div class="row menuprofile">
+      <div class="col-xs-4 text-right">
+        <img src="profileimg.png" class="profileimg" />
+      </div>
+      <div class="col-xs-8 help-nopadding-left">
+        <span class="menuwelcome">Hello Martin!</span><br />
+        <a class="nllink">visit profile</a>
+
+      </div>
+
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-md-12 help-nopadding-left">
+        <ul class="menulist">
+          <li ng-init="open = false" ng-repeat="menucategory in menu">
+            <a data-toggle="collapse" href="#menu{{$index}}" aria-expanded="false" aria-controls="collapseExample" ng-click="open = !open" ng-class="{'activeItem': category == '{{menucategory.category}}'}">
+              <span>{{menucategory.category}}</span><span class="fa fa-fw pull-right" ng-class="{'fa-chevron-up': open, 'fa-chevron-down': !open}"></span>
+            </a>
+            <div class="collapse" id="menu{{$index}}">
+              <ul class="menulist">
+                <li ng-repeat="subpage in menucategory.pages">
+                  <a ng-click="openPage(subpage.name, menucategory.category)" ng-class="{'activeItem': page == '{{subpage.name}}'}">{{subpage.name}}</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    </div>
+    <div class="row footer">
+    <div class="col-md-12 ">
+      <hr />
+      <ul class="linklist">
+        <li>
+          <a><span class="fa fa-fw fa-newspaper-o"></span>Netlight Weekly</a>
+        </li>
+        <li>
+          <a><span class="fa fa-fw fa-clock-o"></span>Time reporting</a>
+        </li>
+        <li>
+          <a><span class="fa fa-fw fa-calendar"></span>Meet up</a>
+        </li>
+        <li>
+          <a><span class="fa fa-fw fa-briefcase"></span>Professional Portal</a>
+        </li>
+      </ul>
+    </div>
+</div>
+  </div>
+  <div class="col-md-10 pull-right">
+    <div class="row">
+      <div class="header">
+        <h1><small>{{category}}</small><br />
+          {{page}}
+        </h1>
+
+      </div>
+    </div>
+    <div class="row" ng-if="category != ''">
+      <div class="col-md-9">
+        <p class="pintro">
+          Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.
+        </p>
+        <br />
+        <h5>Content</h5>
+        <ul class="contentList">
+          <li>
+            <a href="#1">Leverage agile frameworks</a>
+          </li>
+          <li>
+            <a href="#2">Win-win survival strategies</a>
+          </li>
+          <li>
+            <a href="#3">Operational change management</a>
+          </li>
+          <li>
+            <a href="#4">Plug-and-play networks</a>
+          </li>
+
+        </ul>
+        <br />
+        <br />
+        <h5>Choose Office</h5>
+        <ul id="menu_area" class="nav nav-pills officeList">
+          <li class="active"><a data-toggle="tab" ng-click="office = 'Berlin'" >Berlin</a></li>
+          <li><a data-toggle="tab" ng-click="office = 'Hamburg'" >Hamburg</a></li>
+          <li ><a data-toggle="tab" ng-click="office = 'Helsinki'" >Helsinki</a></li>
+          <li ><a data-toggle="tab" ng-click="office = 'London'" >London</a></li>
+          <li ><a data-toggle="tab" ng-click="office = 'München'" >München</a></li>
+          <li ><a data-toggle="tab" ng-click="office = 'Oslo'" >Oslo</a></li>
+          <li ><a data-toggle="tab" ng-click="office = 'Paris'" >Paris</a></li>
+          <li><a data-toggle="tab" ng-click="office = 'Stockholm'" >Stockholm</a></li>
+      </ul>
+        <br />
+        <h2 id="1">Leverage agile frameworks <span class="pull-right">{{office}}</span></h2>
+        <p>
+          Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+        </p>
+        <p>
+          Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.        Capitalise on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
+
+        </p>
+        <h2 id="2">Win-win survival strategies <span class="pull-right">All</span></h2>
+        <p>
+        Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.        Capitalise on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
+        Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.        Capitalise on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
+
+        </p>
+        <h2 id="3">Operational change management <span class="pull-right">{{office}}</span></h2>
+        <p>
+        Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.
+      </p >
+      <p>
+      Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.
+    </p >
+    <p>
+    Operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.
+    Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.
+
+  </p >
+      <p id="4">
+        <h2>Plug-and-play networks <span class="pull-right">{{office}}</span></h2>
+        <p>
+        Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+        Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+        Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+
+        </p>
+      </div>
+    </div>
+
+
+  </div>
+</body>
+</html>
